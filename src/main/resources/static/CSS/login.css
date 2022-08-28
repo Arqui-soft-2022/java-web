@@ -1,0 +1,80 @@
+.login-container{
+    /* Inicio sesión */
+    box-sizing: border-box;
+
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+
+    background: #838EDD;
+}
+
+.login-form-2{
+    /* Rectangle 7 */
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 771px;
+    height: 689px;
+    left: 334px;
+    top: 168px;
+
+    background: #FFFFFF;
+    mix-blend-mode: lighten;
+    border: 1px solid #000000;
+    border-radius: 30px;
+}
+.login-form-2 h3{
+    /* ¡ Bienvenido ! */
+    width: 365px;
+    height: 61px;
+    left: 537px;
+    top: 225px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 61px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #000000;
+
+    mix-blend-mode: normal;
+}
+.login-container form{
+    padding: 10%;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 1)
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-2 .btnSubmit{
+    /* Rectangle 19 */
+    box-sizing: border-box;
+
+    width: 365px;
+    height: 82px;
+    left: 537px;
+    top: 679px;
+
+    color: white;
+    background: #838EDD;
+    border: 1px solid #838EDD;
+    border-radius: 20px;
+}
+.login-form-2 .ForgetPwd{
+    color: #283DF2;
+    font-weight: 600;
+    text-decoration: none;
+}
+
