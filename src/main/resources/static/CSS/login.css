@@ -1,132 +1,132 @@
 @import url("https://rsms.me/inter/inter.css");
 html {
-  font-family: "Inter", sans-serif;
-  background-color: #838edd;
+    font-family: "Inter", sans-serif;
+    background-color: #838edd;
 }
 
 @supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-  }
+    html {
+        font-family: "Inter var", sans-serif;
+    }
 }
 
 body {
-  background-color: #838edd !important;
+    background-color: #838edd !important;
 }
 
 .login-container {
-  /* Inicio sesión */
-  position: relative;
-  width: 940px;
-  height: 34px;
-  background-color: #838edd;
+    /* Inicio sesión */
+    position: relative;
+    width: 940px;
+    height: 34px;
+    background-color: #838edd;
 }
 .textlogin {
-  font-style: normal;
-  font-weight: 800;
-  font-size: 50px;
-  line-height: 61px;
-  /* identical to box height */
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 61px;
+    /* identical to box height */
 
-  text-align: center;
-  letter-spacing: 0.05em;
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-bottom: -10px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: -10px;
 }
 
 .textloginxs {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 36px;
-  text-align: center;
-  letter-spacing: 0.01em;
-  margin-left: 15%;
-  color: #000000;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    margin-left: 15%;
+    color: #000000;
 }
 
 .textloginerrorxs {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 36px;
-  text-align: center;
-  letter-spacing: 0.01em;
-  margin-left: 5%;
-  margin-bottom: -10px;
-  color: #e53737;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    margin-left: 5%;
+    margin-bottom: -10px;
+    color: #e53737;
 }
 .login-form-2 {
-  /* Rectangle 7 */
-  box-sizing: border-box;
+    /* Rectangle 7 */
+    box-sizing: border-box;
 
-  position: absolute;
-  width: 771px;
-  height: 389px;
-  left: 234px;
-  top: 80px;
+    position: absolute;
+    width: 771px;
+    height: 389px;
+    left: 234px;
+    top: 80px;
 
-  background: #ffffff;
-  border-radius: 30px;
+    background: #ffffff;
+    border-radius: 30px;
 }
 .login-form-2 h3 {
-  /* ¡ Bienvenido ! */
-  width: 365px;
-  height: 61px;
-  left: 537px;
-  top: 225px;
+    /* ¡ Bienvenido ! */
+    width: 365px;
+    height: 61px;
+    left: 537px;
+    top: 225px;
 
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 61px;
-  /* identical to box height */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 61px;
+    /* identical to box height */
 
-  text-align: center;
-  letter-spacing: 0.05em;
+    text-align: center;
+    letter-spacing: 0.05em;
 
-  color: #000000;
+    color: #000000;
 
-  mix-blend-mode: normal;
+    mix-blend-mode: normal;
 }
 .login-container form {
-  padding: 10%;
-  background: rgba(255, 255, 255, 0);
+    padding: 10%;
+    background: rgba(255, 255, 255, 0);
 }
 .btnSubmit {
-  width: 175px !important;
-  height: 42px !important;
-  margin-top: 20px;
-  background: #838edd;
-  border: 1px solid #838edd;
-  border-radius: 4px;
-  cursor: pointer;
+    width: 175px !important;
+    height: 42px !important;
+    margin-top: 20px;
+    background: #838edd;
+    border: 1px solid #838edd;
+    border-radius: 4px;
+    cursor: pointer;
 }
 .login-form-2 .btnSubmit {
-  /* Rectangle 19 */
-  box-sizing: border-box;
+    /* Rectangle 19 */
+    box-sizing: border-box;
 
-  width: 365px;
-  height: 82px;
-  left: 37px !important;
-  top: 679px;
+    width: 365px;
+    height: 82px;
+    left: 37px !important;
+    top: 679px;
 
-  color: white;
-  background: #838edd;
-  border: 1px solid #838edd;
-  border-radius: 10px;
+    color: white;
+    background: #838edd;
+    border: 1px solid #838edd;
+    border-radius: 10px;
 }
 .login-form-2 .ForgetPwd {
-  color: #283df2;
-  font-weight: 600;
-  text-decoration: none;
+    color: #283df2;
+    font-weight: 600;
+    text-decoration: none;
 }
 .separator {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 .loginform{
     padding-top: 10px !important;
@@ -137,20 +137,20 @@ body {
 }
 
 .dropbar{
-  cursor: pointer;
-  text-decoration: none;
-  background-color: #838edd00;
-  border: 0px;
-  margin-right: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #838edd00;
+    border: 0px;
+    margin-right: 50px;
 }
 
 .textbar{
-  display:inline;
-  margin-left:20px;
-  color:#ffffff;
-  font-size: 20px;
-  font-weight: 700;
-line-height: 36px;
-text-align: center;
-letter-spacing: 0.07em;
+    display:inline;
+    margin-left:20px;
+    color:#ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.07em;
 }
