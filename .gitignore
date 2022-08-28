@@ -28,8 +28,6 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-/src/main/resources/static/CSS
-/src/main/resources/templates/register.html
 
 ### VS Code ###
 .vscode/
