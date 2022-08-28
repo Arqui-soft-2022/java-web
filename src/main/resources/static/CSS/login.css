@@ -46,6 +46,19 @@ body {
   margin-left: 15%;
   color: #000000;
 }
+
+.textloginerrorxs {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  margin-left: 5%;
+  margin-bottom: -10px;
+  color: #e53737;
+}
 .login-form-2 {
   /* Rectangle 7 */
   box-sizing: border-box;
@@ -82,7 +95,7 @@ body {
 }
 .login-container form {
   padding: 10%;
-  background: white;
+  background: rgba(255, 255, 255, 0);
 }
 .btnSubmit {
   width: 175px !important;
