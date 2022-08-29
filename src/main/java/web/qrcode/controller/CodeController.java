@@ -1,7 +1,6 @@
 package web.qrcode.controller;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -14,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import web.qrcode.model.GenerateQR;
-import web.qrcode.model.QrCode;
 
 
 @Controller
@@ -22,6 +20,11 @@ import web.qrcode.model.QrCode;
 @Slf4j
 public class CodeController {
     @Value("${URI}") String URI;
+
+    @GetMapping()
+    public String generate() {
+        return "generate";
+    }
 
     @PostMapping("/generate")
     public String generateCode(@ModelAttribute("generate") GenerateQR generateQR, Model model) {
@@ -34,8 +37,8 @@ public class CodeController {
                 log.info(""+response.getBody());
                 JSONArray array = new JSONArray("["+response.getBody()+"]");
                 String dataQR= array.getJSONObject(0).getJSONObject("qr_code").get("url_code").toString();
-                model.addAttribute("base",dataQR);
-                return "generate";
+                model.addAttribute("imageBase",dataQR);
+                return "redirect:/code";
             }
         }catch (Exception e) {
             model.addAttribute("mensaje","Datos erróneos, por favor vuelva a intentarlo");
@@ -44,8 +47,4 @@ public class CodeController {
         return "generate";
     }
 
-    @GetMapping()
-    public String generate() {
-        return "generate";
-    }
 }
