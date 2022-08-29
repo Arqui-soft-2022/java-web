@@ -35,7 +35,7 @@ public class AuthController {
         try {
             ResponseEntity<String> response = restTemplate
             .exchange(URI+"/auth/login", HttpMethod.POST, request, String.class);
-            log.info(""+response.getBody());
+            //log.info(""+response.getBody());
             if(response.getStatusCode().value() == 200){
                 return "login";
             }
@@ -55,7 +55,7 @@ public class AuthController {
             ResponseEntity<String> response = restTemplate
                     .exchange(URI + "/auth/register", HttpMethod.POST, request, String.class);
             if (response.getStatusCode().value() == 200) {
-                log.info(""+response.getBody());
+                //log.info(""+response.getBody());
                 return "login";
             }
         }catch (Exception e) {
