@@ -38,13 +38,13 @@ public class CodeController {
                 JSONArray array = new JSONArray("["+response.getBody()+"]");
                 String dataQR= array.getJSONObject(0).getJSONObject("qr_code").get("url_code").toString();
                 model.addAttribute("imageBase",dataQR);
-                return "redirect:/code";
+                return "generate";
             }
         }catch (Exception e) {
             model.addAttribute("mensaje","Datos erróneos, por favor vuelva a intentarlo");
             return "generate";
         }
-        return "generate";
+        return "redirect:/code";
     }
 
 }
