@@ -14,6 +14,10 @@ body {
     background-color: #838edd !important;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .login-container {
     /* Inicio sesión */
     position: relative;
@@ -153,4 +157,9 @@ body {
     line-height: 36px;
     text-align: center;
     letter-spacing: 0.07em;
+}
+
+.row-generate {
+    margin-top: 5rem;
+        border-radius: 1rem;
 }
