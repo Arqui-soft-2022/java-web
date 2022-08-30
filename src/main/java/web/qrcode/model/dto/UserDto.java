@@ -1,4 +1,8 @@
-package web.qrcode.model;
+package web.qrcode.model.dto;
+
+/*
+ * Clase para realizar la peticion de historial de codigos
+ */
 
 public class UserDto 
 {

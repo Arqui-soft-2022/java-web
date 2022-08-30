@@ -24,10 +24,10 @@ import org.springframework.web.client.RestTemplate;
 
 import lombok.extern.slf4j.Slf4j;
 import web.qrcode.model.QrCode;
-import web.qrcode.model.QrCodeDto;
 import web.qrcode.model.Type;
-import web.qrcode.model.UserDto;
 import web.qrcode.model.Usuario;
+import web.qrcode.model.dto.QrCodeDto;
+import web.qrcode.model.dto.UserDto;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -53,21 +53,8 @@ public class QrController {
             ResponseEntity<String> response = restTemplate
             .exchange(URI + "/code/historial/", HttpMethod.POST, request, String.class);	
             if(response.getStatusCode().value() == 200){
-            	StringBuilder aux = new StringBuilder(response.getBody());
-            	for(int i = 0; i<=31; i++)
-            		aux.deleteCharAt(0);
-        	    String json = "{" + aux.toString();
-        	    
-        	    JSONObject myjson = new JSONObject(json);
-        	    JSONArray array = myjson.getJSONArray("codes");
-        	    
-        	    int size = array.length();
-        	    List<QrCodeDto> codes = new ArrayList<QrCodeDto>();
-        	    ArrayList<JSONObject> arrays = new ArrayList<JSONObject>();
-        	    for (int i = 0; i < size; i++) {
-        	        JSONObject x = array.getJSONObject(i);
-        	        codes.add(new QrCodeDto(x.getInt("id_code"), x.getString("url"),x.getString("url_code"), x.getInt("type"), x.getString("date")));        	        
-        	    }
+            	StringBuilder aux = new StringBuilder(response.getBody()).delete(1, 32);
+        	    List<QrCodeDto> codes = getCodes(aux.toString());
         	    
         	    model.addAttribute("codes", codes);
             	
@@ -77,5 +64,22 @@ public class QrController {
         	System.out.println(e.getMessage());
         }		
 	    return "login";
+	}
+	
+	/*
+	 * Obtiene la lista de codigos de un json
+	 */
+	
+	private List<QrCodeDto> getCodes(String json)
+	{		
+		List<QrCodeDto> codes = new ArrayList<>();
+		JSONArray array = new JSONObject(json).getJSONArray("codes");
+		
+		for (int i = 0; i < array.length(); i++) {
+	        JSONObject x = array.getJSONObject(i);
+	        codes.add(new QrCodeDto(x.getInt("id_code"), x.getString("url"),x.getString("url_code"), x.getString("type"), x.getString("date")));        	        
+	    }
+		
+		return codes;
 	}
 }
