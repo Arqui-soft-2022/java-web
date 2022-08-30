@@ -9,37 +9,28 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 
-<link th:href="@{/CSS/login.css}" rel="stylesheet" />
+<link th:href="@{/CSS/listar.css}" rel="stylesheet" />
 
 <head>
 <meta charset="utf-8" />
 </head>
 <body class="bg-appweb-2">
 	<nav th:insert="navbar::nav"></nav>
-	<main
-		class="flex w-100 items-center justify-center min-h-screen flex-col">
-		<h1 class="text-2xl md:text-4xl font-semibold text-white mb-5">Códigos
-			QR generados</h1>
-		<div>
-		
-			<section th:each="code : ${codes}"
-				class="bg-white rounded-2xl py-10 px-4 md:px-10 lg:px-12 lg:py-6 w-full">
-				<article class="md:flex items-center">
-					<div class="mt-5">
-						<p class="text-2xl mb-3 font-semibol" th:text="${code.type}"></p>
+	<main class="flex w-100 items-center justify-center min-h-screen flex-col">
+		<h1 class="text-2xl md:text-4xl font-semibold text-white mb-5">Códigos QR generados</h1>
+		<div th:each="code: ${codes}">
+			<section id="codes" class="bg-white rounded-2xl py-10 px-4 md:px-10 lg:px-12 lg:py-6 w-full">
+				<article id="code" class="md:flex items-center">
+					<div class="col-9">
+						<p class="text-2xl" th:text="${code.type}"></p>
 						<hr class="border-black">
-						<p class="mt-3 text-lg" th:text="${code.url}"></p>
+						<a class="mt-3 text-lg" th:href="${code.url}" th:text="${code.url}"></a>
 					</div>
-					<div class="ml-5">
-						<img class="h-24 w-2h-24 mx-auto mb-3"
-							src="https://www.ocu.org/-/media/ta/images/qr-code.png?rev=2e1cc496-40d9-4e21-a7fb-9e2c76d6a288&hash=AF7C881FCFD0CBDA00B860726B5E340B&mw=960"
-							alt="QR">
-						<button
-							class="bg-appweb-2 text-white font-semibold transform hover:scale-105 duration-300 transition-all hover:bg-blue-800 text-lg py-3 px-3 rounded-xl">Exportar
-							QR</button>
+					<div class="col-3 items-center">
+						<button id="button" class="bg-appweb-2 text-white transform hover:scale-105 duration-300 transition-all hover:bg-blue-800 rounded-xl">Exportar QR</button>
 					</div>
 				</article>
-			</section>			
+			</section>	
 		</div>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
