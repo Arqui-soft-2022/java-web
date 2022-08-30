@@ -1,8 +1,5 @@
 package web.qrcode.model.dto;
 
-import java.text.DateFormat;
-import java.util.Date;
-
 public class QrCodeDto 
 {
 	private Integer id_code;

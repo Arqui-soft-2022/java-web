@@ -1,13 +1,7 @@
 package web.qrcode.controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-import java.util.Set;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -18,21 +12,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import lombok.extern.slf4j.Slf4j;
-import web.qrcode.model.QrCode;
-import web.qrcode.model.Type;
-import web.qrcode.model.Usuario;
 import web.qrcode.model.dto.QrCodeDto;
 import web.qrcode.model.dto.UserDto;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import com.google.gson.Gson;
-
 
 @Controller
 @RequestMapping("/api")
