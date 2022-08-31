@@ -27,3 +27,216 @@ html {
 .bg-appweb-3 { background-color: #232B61; }
 .bg-appweb-4 { background-color: #6973B8; }
 .bg-appweb-5 { background-color: #AFB3D2; }
+
+
+body {
+    background-color: #838edd !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.login-container {
+    /* Inicio sesión */
+    position: relative;
+    width: 940px;
+        height: 34px;
+        background-color: #838edd;
+    }
+    .textlogin {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 50px;
+        line-height: 61px;
+        /* identical to box height */
+
+        text-align: center;
+        letter-spacing: 0.05em;
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-bottom: -10px;
+    }
+
+    .textloginxs {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 36px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        margin-left: 15%;
+        color: #000000;
+    }
+
+    .textloginerrorxs {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 36px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        margin-left: 5%;
+        margin-bottom: -10px;
+        color: #e53737;
+    }
+    .login-form-2 {
+        /* Rectangle 7 */
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 771px;
+        height: 389px;
+        left: 234px;
+        top: 80px;
+
+        background: #ffffff;
+        border-radius: 30px;
+    }
+    .login-form-2 h3 {
+        /* ¡ Bienvenido ! */
+        width: 365px;
+        height: 61px;
+        left: 537px;
+        top: 225px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 61px;
+        /* identical to box height */
+
+        text-align: center;
+        letter-spacing: 0.05em;
+
+        color: #000000;
+
+        mix-blend-mode: normal;
+    }
+    .login-container form {
+        padding: 10%;
+        background: rgba(255, 255, 255, 0);
+    }
+    .btnSubmit {
+        width: 175px !important;
+        height: 42px !important;
+        margin-top: 20px;
+        background: #838edd;
+        border: 1px solid #838edd;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .login-form-2 .btnSubmit {
+        /* Rectangle 19 */
+        box-sizing: border-box;
+
+        width: 365px;
+        height: 82px;
+        left: 37px !important;
+        top: 679px;
+
+        color: white;
+        background: #838edd;
+        border: 1px solid #838edd;
+        border-radius: 10px;
+    }
+    .login-form-2 .ForgetPwd {
+        color: #283df2;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    .separator {
+        margin-left: 20px;
+    }
+    .loginform{
+        padding-top: 10px !important;
+    }
+
+    .form-control{
+        border-radius: 10px;
+    }
+
+    .dropbar{
+        cursor: pointer;
+        text-decoration: none;
+        background-color: #838edd00;
+        border: 0px;
+        margin-right: 50px;
+    }
+
+    .textbar{
+        display:inline;
+        margin-left:20px;
+        color:#ffffff;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 36px;
+        text-align: center;
+        letter-spacing: 0.07em;
+    }
+
+    .row-generate {
+        margin-top: 5rem;
+
+
+    }
+
+    .radiusone {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding-top: 2rem;
+
+    }
+
+    .radiustwo {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-top: 2rem;
+
+    }
+
+    .textgenerate {
+        color:#ffffff;
+        margin-bottom: 20px;
+
+    }
+
+    .generate-container {
+        margin-bottom: 20px;
+    }
+
+    .texto-h {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .btnText {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .btna {
+       text-align: center;
+       text-decoration:none;
+       padding-top: 5px;
+       color: white;
+               margin-left:6rem;
+
+       }
+
+    .btna a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .container-generar img {
+        margin-left:4rem;
+    }
+
+    .btnExpo {
+        text-decoration:none;
+
+    }

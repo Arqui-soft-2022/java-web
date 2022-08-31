@@ -44,7 +44,7 @@ public class AuthController {
             Integer idUsuario = jsonObject2.getInt("id_usuario");
             session.setAttribute("idUsuario", idUsuario);
             if(response.getStatusCode().value() == 200){
-                return "login";
+                return "redirect:/code";
             }
         } catch (Exception e) {
             model.addAttribute("mensaje","Usuario o contraseña incorrecta");
