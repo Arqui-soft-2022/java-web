@@ -30,14 +30,10 @@ public class QrController {
 	@GetMapping("/listar/{user}")
 	public String listar(@PathVariable String user, Model model) 
 	{
-		UserDto usuario = new UserDto(Integer.parseInt(user));
-		
-		RestTemplate restTemplate = new RestTemplate();
-		HttpEntity<?> request = new HttpEntity<>(usuario);
-		System.out.println(""+ request.getBody() + "***");
+		HttpEntity<?> request = new HttpEntity<>(new UserDto(Integer.parseInt(user)));
         
 		try {
-            ResponseEntity<String> response = restTemplate
+            ResponseEntity<String> response = new RestTemplate()
             .exchange(URI + "/code/historial/", HttpMethod.POST, request, String.class);	
             if(response.getStatusCode().value() == 200){
             	StringBuilder aux = new StringBuilder(response.getBody()).delete(1, 32);
@@ -48,7 +44,7 @@ public class QrController {
             	return "listar";
             }
         } catch (Exception e) {
-        	System.out.println(e.getMessage());
+        	//System.out.println(e.getMessage());
         }		
 	    return "login";
 	}
