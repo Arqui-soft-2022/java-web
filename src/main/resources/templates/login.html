@@ -19,7 +19,7 @@
             <article class="text-center">
                 <h1 class="text-2xl md:text-4xl font-semibold">Bienvenido</h1>
                 <p class="flex justify-center md:text-lg">¿Aún no tienes cuenta? <a
-                    class="ml-2 text-blue-600 hover:text-blue-900 underline" href="register">Registrate</a>
+                    class="ml-2 text-blue-600 hover:text-blue-900 underline" th:href="@{auth/registerView}">Registrate</a>
             </p>
             <form class="mt-5" th:action="@{/auth/login}" method="post">
                 <input

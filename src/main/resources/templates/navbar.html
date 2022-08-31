@@ -33,7 +33,10 @@
                   <p class="textbar">User</p>
               </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" th:href="@{/code}">
+              <img th:src="@{/images/qr-code.svg}" width="20px" height="20px" alt="">
+              Generar QR</a>
+                  <a class="dropdown-item" th:href="@{/api/listar/{user}(user=${session.idUsuario})}">
               <img th:src="@{/images/historial.svg}" width="20px" height="20px" alt="">
               Ver historial</a>
                   <a class="dropdown-item" href="#">

@@ -33,16 +33,18 @@ public class CodeController {
         RestTemplate restTemplate = new RestTemplate();
         GenerateQRDto generateQR = new GenerateQRDto();
         generateQR.setUrl(url);
-        generateQR.setUser(Integer.parseInt(session.getAttribute("idUsuario").toString()));
+        if(session!=null && session.getAttribute("idUsuario")!=null) {
+            generateQR.setUser(Integer.parseInt(session.getAttribute("idUsuario").toString()));
+        }else{
+            return "redirect:/auth/loginView";
+        }
         HttpEntity<GenerateQRDto> request = new HttpEntity<>(generateQR);
         try {
             ResponseEntity<String> response = restTemplate
                     .exchange(URI + "/code", HttpMethod.POST, request, String.class);
             if (response.getStatusCode().value() == 200) {
                 log.info(""+response.getBody());
-                JSONArray array = new JSONArray("["+response.getBody()+"]");
-                String dataQR= array.getJSONObject(0).getJSONObject("qr_code").get("url_code").toString();
-                model.addAttribute("imageBase",dataQR);
+                sendBase64(response.getBody(),model);
                 return "generate";
             }
         }catch (Exception e) {
@@ -52,4 +54,9 @@ public class CodeController {
         return "redirect:/code";
     }
 
+    private void sendBase64(String json, Model model){
+        JSONArray array = new JSONArray("["+json+"]");
+        String dataQR= array.getJSONObject(0).getJSONObject("qr_code").get("url_code").toString();
+        model.addAttribute("imageBase",dataQR);
+    }
 }
