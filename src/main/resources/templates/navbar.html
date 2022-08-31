@@ -39,7 +39,7 @@
                   <a class="dropdown-item" th:href="@{/api/listar/{user}(user=${session.idUsuario})}">
               <img th:src="@{/images/historial.svg}" width="20px" height="20px" alt="">
               Ver historial</a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" th:href="@{/auth/logout}">
               <img th:src="@{/images/majesticons_logout-half-circle-line.svg}"  width="20px" height="20px" alt="">
               Cerrar sesión</a>
                 </div>
