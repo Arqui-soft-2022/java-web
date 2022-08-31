@@ -78,4 +78,5 @@ public class AuthController {
             }
         return "redirect:/auth/loginView";
     }
+    /*Prueba commit*/
 }
