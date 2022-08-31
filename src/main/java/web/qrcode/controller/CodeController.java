@@ -27,8 +27,12 @@ public class CodeController {
     }
 
     @PostMapping("/generate")
-    public String generateCode(@ModelAttribute("generate") GenerateQR generateQR, Model model) {
+    public String generateCode(@RequestParam(value = "url") String url,
+                                   @RequestParam(value = "user") int user, Model model) {
         RestTemplate restTemplate = new RestTemplate();
+        GenerateQR generateQR = new GenerateQR();
+        generateQR.setUrl(url);
+        generateQR.setUser(user);
         HttpEntity<GenerateQR> request = new HttpEntity<>(generateQR);
         try {
             ResponseEntity<String> response = restTemplate

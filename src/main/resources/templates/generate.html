@@ -9,16 +9,18 @@
 
 
 <link th:href="@{/CSS/login.css}" rel="stylesheet"/>
-
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 </head>
 <body>
 <nav th:insert="navbar::nav"></nav>
-<div class="container login-container" style="margin-top:10em">
-    <div class="row ">
-        <div class="col-md-6 bg-white rounded-lg">
+<div class="container login-container generate-container" >
+
+    <div class="row row-generate">
+        <h3 class="textlogin textgenerate">Genere su codigo QR</h3>
+        <div class="col-md-6 bg-white rounded-lg radiusone ">
+
             <form class="loginform" action="#" th:action="@{/code/generate}" method="post">
                 <div class="form-group">
                 </div>
@@ -27,26 +29,36 @@
                            required/>
                 </div>
                 <div class="form-group">
+                    <h4 class="texto-h"> Sitio web (url)</h4>
                     <input type="text" class="form-control" placeholder="URL" name="url" required/>
                 </div>
                 <div class="row">
                     <div class="col-3"></div>
                     <div class="form-group col-6">
                         <p class="textloginerrorxs" th:text="${mensaje}"></p>
-                        <input type="submit" class="btnSubmit" value="Generar QR"/>
+                        <input type="submit" class="btnSubmit btnText btn-mod" value="Generar QR"/>
                     </div>
                     <div class="col-3"></div>
                 </div>
 
             </form>
         </div>
-        <div class="col-md-6 bg-white rounded-lg">
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="form-group col-6">
+
+        <div class="col-md-6 bg-white rounded-lg radiustwo">
+            <div class="container-generar">
+                <img th:src="${imageBase}">
+                <!-- <div class="form-group col-6">
                     <a th:href="${imageBase}" download="image_qr"><img th:src="${imageBase}"></a>
+                </div> -->
+
+                <div class="form-group  btnSubmit btnText btna ">
+
+                    <a th:href="${imageBase}" download="image_qr" class="btnExpo">Exportar QR</a>
+
                 </div>
-                <div class="col-3"></div>
+
+
+
             </div>
         </div>
 
@@ -67,4 +79,3 @@
 
 </body>
 </html>
-
