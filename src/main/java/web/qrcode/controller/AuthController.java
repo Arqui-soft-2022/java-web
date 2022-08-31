@@ -1,6 +1,7 @@
 package web.qrcode.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.client.RestTemplate;
 import web.qrcode.model.Usuario;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/auth")
@@ -29,13 +32,17 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute("usuario") Usuario usuario, Model model){
+    public String login(@ModelAttribute("usuario") Usuario usuario, Model model, HttpSession session){
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Usuario> request = new HttpEntity<>(usuario);
         try {
             ResponseEntity<String> response = restTemplate
             .exchange(URI+"/auth/login", HttpMethod.POST, request, String.class);
-            //log.info(""+response.getBody());
+            JSONObject jsonObject1 = new JSONObject(response.getBody());
+            Object usuarioJson = jsonObject1.getJSONObject("usuario");
+            JSONObject jsonObject2 = new JSONObject(usuarioJson.toString());
+            Integer idUsuario = jsonObject2.getInt("id_usuario");
+            session.setAttribute("idUsuario", idUsuario);
             if(response.getStatusCode().value() == 200){
                 return "login";
             }
