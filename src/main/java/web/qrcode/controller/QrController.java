@@ -38,6 +38,7 @@ public class QrController {
             	StringBuilder aux = new StringBuilder(response.getBody()).delete(1, 32);
         	    List<QrCodeDto> codes = getCodes(aux.toString());
         	    model.addAttribute("codes", codes);
+        	    model.addAttribute("size", codes.size());
             	
             	return "listar";
             }
