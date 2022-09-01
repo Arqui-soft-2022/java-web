@@ -36,10 +36,11 @@
                     <a class="dropdown-item" th:href="@{/code}">
               <img th:src="@{/images/qr-code.svg}" width="20px" height="20px" alt="">
               Generar QR</a>
-                  <a class="dropdown-item" th:href="@{/api/listar/{user}(user=${session.idUsuario})}">
-              <img th:src="@{/images/historial.svg}" width="20px" height="20px" alt="">
-              Ver historial</a>
-                  <a class="dropdown-item" th:href="@{/auth/logout}">
+              <a class="dropdown-item" th:href="@{/api/listar/}" >
+			<img th:src="@{/images/historial.svg}" width="20px" height="20px" alt=""  style="display:inline;">
+		         Ver historial</a>
+		 
+                  <a class="dropdown-item" href="#">
               <img th:src="@{/images/majesticons_logout-half-circle-line.svg}"  width="20px" height="20px" alt="">
               Cerrar sesión</a>
                 </div>

@@ -3,6 +3,8 @@ package web.qrcode.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -10,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
@@ -27,26 +28,27 @@ import org.json.JSONObject;
 public class QrController {
 	@Value("${URI}") String URI;
 	
-	@GetMapping("/listar/{user}")
-	public String listar(@PathVariable String user, Model model) 
+	@GetMapping("/listar/")
+	public String listar(Model model, HttpSession session) 
 	{
-		HttpEntity<?> request = new HttpEntity<>(new UserDto(Integer.parseInt(user)));
-        
-		try {
-            ResponseEntity<String> response = new RestTemplate()
-            .exchange(URI + "/code/historial/", HttpMethod.POST, request, String.class);	
-            if(response.getStatusCode().value() == 200){
-            	StringBuilder aux = new StringBuilder(response.getBody()).delete(1, 32);
-        	    List<QrCodeDto> codes = getCodes(aux.toString());
-        	    
-        	    model.addAttribute("codes", codes);
-            	
-            	return "listar";
-            }
-        } catch (Exception e) {
-        	//System.out.println(e.getMessage());
-        }		
-	    return "login";
+		Integer user = Integer.parseInt(session.getAttribute("idUsuario").toString());
+		HttpEntity<?> request = new HttpEntity<>(new UserDto(user));
+		
+		try {			
+			ResponseEntity<String> response = new RestTemplate()
+	        .exchange(URI + "/code/historial/", HttpMethod.POST, request, String.class);	
+	        if(response.getStatusCode().value() == 200){
+	        	StringBuilder aux = new StringBuilder(response.getBody()).delete(1, 32);
+	        	List<QrCodeDto> codes = getCodes(aux.toString());
+	        	model.addAttribute("codes", codes);
+	            
+	        	return "listar";
+	        }
+		} catch (Exception e) {
+			//System.out.println(e.getMessage());
+	    }
+		
+	    return "redirect:/auth/loginView";
 	}
 	
 	/*
