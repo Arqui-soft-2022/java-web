@@ -40,6 +40,7 @@ public class QrController {
         	    List<QrCodeDto> codes = getCodes(aux.toString());
         	    
         	    model.addAttribute("codes", codes);
+        	    model.addAttribute("size", codes.size());
             	
             	return "listar";
             }
