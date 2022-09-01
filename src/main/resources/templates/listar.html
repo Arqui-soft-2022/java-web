@@ -19,10 +19,10 @@
 <body>
 	<nav th:insert="navbar::nav"></nav>
 	<main class="flex w-100 items-center justify-center flex-col">
-		<div th:if="${size} == 0">
+		<div th:if="${codes.size} == 0">
 			<h1 class="textlogin textgenerate">Este Usuario NO ha generado ningún QR</h1>
 		</div>
-		<div th:if="${size} != 0">
+		<div th:if="${codes.size} != 0">
 			<h1 class="textlogin textgenerate">Códigos QR generados</h1>
 			<div th:each="code: ${codes}">
 				<section id="codes" class="bg-white rounded-2xl py-10 px-4 md:px-10 lg:px-12 lg:py-6 w-full">

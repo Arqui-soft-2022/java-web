@@ -43,7 +43,6 @@ public class CodeController {
             ResponseEntity<String> response = restTemplate
                     .exchange(URI + "/code", HttpMethod.POST, request, String.class);
             if (response.getStatusCode().value() == 200) {
-                log.info(""+response.getBody());
                 sendBase64(response.getBody(),model);
                 return "generate";
             }

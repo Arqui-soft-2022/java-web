@@ -27,20 +27,21 @@
             </li>
           </ul>
           <span class="nav-item dropdown">
-            <div class="dropdown" style="margin-right: 110px">
+            <div class="dropdown">
                 <button class="dropbar" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img th:src="@{/images/Vector.svg}" width="40px" height="40px" alt=""style="display:inline;">
-              <p style="color: white;display:inline;" th:text="${session.username}">User</p> 
+              <img th:src="@{/images/Vector.svg}" width="40px" height="40px" alt="">
+                  <p class="textbar">User</p>
               </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" th:href="@{/code}">
-              <img th:src="@{/images/qr-code.svg}" width="20px" height="20px" alt="" style="display:inline;">
+              <img th:src="@{/images/qr-code.svg}" width="20px" height="20px" alt="">
               Generar QR</a>
-                  <a class="dropdown-item" th:href="@{/api/listar/{user}(user=${session.idUsuario})}" >
-              <img th:src="@{/images/historial.svg}" width="20px" height="20px" alt=""  style="display:inline;">
-              Ver historial</a>
-                  <a class="dropdown-item" th:href="@{/auth/logout}">
-              <img th:src="@{/images/majesticons_logout-half-circle-line.svg}"  width="20px" height="20px" alt=""  style="display:inline;">
+              <a class="dropdown-item" th:href="@{/api/listar/}" >
+			<img th:src="@{/images/historial.svg}" width="20px" height="20px" alt=""  style="display:inline;">
+		         Ver historial</a>
+		 
+                  <a class="dropdown-item" href="#">
+              <img th:src="@{/images/majesticons_logout-half-circle-line.svg}"  width="20px" height="20px" alt="">
               Cerrar sesión</a>
                 </div>
               </div>
