@@ -71,7 +71,11 @@ public class AuthController {
             }
         return "redirect:/auth/loginView";
     }
-
-
-
+    @PostMapping("/logout")
+    public String logout(@ModelAttribute("usuario") Usuario usuario, HttpSession session){
+            if(session != null && session.getAttribute("idUsuario") != null){
+                session.removeAttribute("idUsuario");
+            }
+        return "redirect:/auth/loginView";
+    }
 }
