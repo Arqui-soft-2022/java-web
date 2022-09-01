@@ -32,9 +32,9 @@
 							<hr class="border-black">
 							<a class="mt-3 text-lg" th:href="${code.url}" th:text="${code.url}"></a>
 						</div>
-						<div class="col-3 items-center">
-							<img  th:src="${code.url_code}" width="70px" height="70px">
-							<a id="button " download="image_qr" th:href="${code.url_code}" class="" disabled>Exportar QR</a>
+						<div class="col-3 items-center container-generar">
+							<img  id="qr" th:src="${code.url_code}" width="70px" height="70px">
+							<a id="button" download="image_qr" th:href="${code.url_code}" disabled>Exportar QR</a>
 						</div>
 					</article>
 				</section>	
