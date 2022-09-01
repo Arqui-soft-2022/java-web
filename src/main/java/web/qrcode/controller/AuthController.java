@@ -38,11 +38,17 @@ public class AuthController {
         try {
             ResponseEntity<String> response = restTemplate
             .exchange(URI+"/auth/login", HttpMethod.POST, request, String.class);
+           
             JSONObject jsonObject1 = new JSONObject(response.getBody());
             Object usuarioJson = jsonObject1.getJSONObject("usuario");
             JSONObject jsonObject2 = new JSONObject(usuarioJson.toString());
+
             Integer idUsuario = jsonObject2.getInt("id_usuario");
+            String nombreUsuario = jsonObject2.getString("username");
+
+            session.setAttribute("username", nombreUsuario);
             session.setAttribute("idUsuario", idUsuario);
+
             if(response.getStatusCode().value() == 200){
                 return "redirect:/code";
             }

@@ -31,14 +31,12 @@ public class QrController {
 	public String listar(@PathVariable String user, Model model) 
 	{
 		HttpEntity<?> request = new HttpEntity<>(new UserDto(Integer.parseInt(user)));
-        
 		try {
             ResponseEntity<String> response = new RestTemplate()
             .exchange(URI + "/code/historial/", HttpMethod.POST, request, String.class);	
             if(response.getStatusCode().value() == 200){
             	StringBuilder aux = new StringBuilder(response.getBody()).delete(1, 32);
         	    List<QrCodeDto> codes = getCodes(aux.toString());
-        	    
         	    model.addAttribute("codes", codes);
             	
             	return "listar";
